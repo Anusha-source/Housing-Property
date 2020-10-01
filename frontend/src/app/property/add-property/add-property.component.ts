@@ -47,24 +47,12 @@ export class AddPropertyComponent implements OnInit {
   ngOnInit() {
     this.CreateAddPropertyForm();
 
-
-
+    
 
 
   }
 
-  url='house_default.webp';
 
-  // tslint:disable-next-line: typedef
-  onselectedFile(e){
-   if(e.target.files){
-     var reader = new FileReader();
-     reader.readAsDataURL(e.target.files[0]);
-     reader.onload=(event:any)=>{
-       this.url=event.target.result;
-     }
-   }
-  }
 
   CreateAddPropertyForm() {
     this.addPropertyForm = this.fb.group({

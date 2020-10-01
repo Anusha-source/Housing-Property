@@ -11,10 +11,7 @@ export class HousingService {
 
   constructor(private http: HttpClient) { }
 
-  getAllCities(): Observable<string[]> {
-    return this.http.get<string[]>('http://localhost:5000/api/city');
-  }
-
+  
 
 
   // tslint:disable-next-line: typedef
