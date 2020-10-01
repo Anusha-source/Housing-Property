@@ -48,7 +48,7 @@ onCityFilterClear() {
 
 // tslint:disable-next-line: typedef
 onSortDirection() {
-  
+
   if (this.SortDirection === 'desc') {
     this.SortDirection = 'asc';
   } else {
