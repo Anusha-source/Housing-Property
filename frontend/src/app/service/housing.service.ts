@@ -11,7 +11,9 @@ export class HousingService {
 
   constructor(private http: HttpClient) { }
 
-  
+  getAllCities():Observable<string[]>{
+    return this.http.get<string[]>('http://localhost:4752/weatherforecast');
+  }
 
 
   // tslint:disable-next-line: typedef

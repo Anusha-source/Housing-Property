@@ -45,7 +45,11 @@ export class AddPropertyComponent implements OnInit {
     private alertify: AlertifyService) { }
 
   ngOnInit() {
-    this.CreateAddPropertyForm();
+
+    this.CreateAddPropertyForm(); 
+    this.housingService.getAllCities().subscribe(data =>{
+      console.log(data);
+    })
 
     
 
