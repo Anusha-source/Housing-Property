@@ -46,12 +46,11 @@ export class AddPropertyComponent implements OnInit {
 
   ngOnInit() {
 
-    this.CreateAddPropertyForm(); 
+    this.CreateAddPropertyForm();
     this.housingService.getAllCities().subscribe(data =>{
       console.log(data);
     })
 
-    
 
 
   }

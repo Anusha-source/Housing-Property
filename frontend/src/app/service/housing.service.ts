@@ -10,12 +10,9 @@ import { Property } from '../model/property';
 export class HousingService {
 
   constructor(private http: HttpClient) { }
-
-  getAllCities():Observable<string[]>{
-    return this.http.get<string[]>('http://localhost:4752/weatherforecast');
+  getAllCities(): Observable<string[]> {
+    return this.http.get<string[]>('http://localhost:4572/api/city');
   }
-
-
   // tslint:disable-next-line: typedef
   getProperty(id: number) {
     return this.getAllProperties().pipe(
