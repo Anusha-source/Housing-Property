@@ -11,8 +11,9 @@ export class HousingService {
 
   constructor(private http: HttpClient) { }
   getAllCities(): Observable<string[]> {
-    return this.http.get<string[]>('https://localhost:44384/weatherforecast');
+    return this.http.get<string[]>('https://localhost:44325/api/city');
   }
+
   // tslint:disable-next-line: typedef
   getProperty(id: number) {
     return this.getAllProperties().pipe(
@@ -22,6 +23,7 @@ export class HousingService {
       })
     );
   }
+
 
   getAllProperties(SellRent?: number): Observable<Property[]> {
     return this.http.get('data/properties.json').pipe(

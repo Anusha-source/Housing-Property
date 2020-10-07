@@ -87,7 +87,7 @@ const appRoutes: Routes = [
     UserServiceService,
     AlertifyService,
     AuthService,
-    PropertyDetailResolverService
+    PropertyDetailResolverService,
   ],
   bootstrap: [AppComponent]
 })

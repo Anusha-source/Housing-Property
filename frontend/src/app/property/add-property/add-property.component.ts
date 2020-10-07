@@ -6,6 +6,8 @@ import { IPropertyBase } from 'src/app/model/ipropertybase';
 import { Property } from 'src/app/model/property';
 import { HousingService } from 'src/app/service/housing.service';
 import { AlertifyService } from 'src/app/service/alertify.service';
+import { HttpClient, HttpRequest, HttpEventType, HttpResponse } from '@angular/common/http'
+
 
 
 @Component({
@@ -19,6 +21,8 @@ export class AddPropertyComponent implements OnInit {
   addPropertyForm: FormGroup;
   nextClicked: boolean;
   property = new Property();
+
+  
 
   // Will come from masters
   propertyTypes: Array<string> = ['House', 'Apartment', 'Duplex']
@@ -35,24 +39,33 @@ export class AddPropertyComponent implements OnInit {
     BHK: null,
     BuiltArea: null,
     City: '',
-    RTM: null
+    RTM: null,
+    Image: null,
   };
+
 
   constructor(
     private fb: FormBuilder,
     private router: Router,
     private housingService: HousingService,
+    private http: HttpClient,
     private alertify: AlertifyService) { }
+
+
+
+
+
+
+
+
 
   ngOnInit() {
 
     this.CreateAddPropertyForm();
-    this.housingService.getAllCities().subscribe(data =>{
+    this.housingService.getAllCities().subscribe(data => {
+      this.cityList = data;
       console.log(data);
-    })
-
-
-
+    });
   }
 
 
@@ -65,7 +78,8 @@ export class AddPropertyComponent implements OnInit {
         PType: [null, Validators.required],
         FType: [null, Validators.required],
         Name: [null, Validators.required],
-        City: [null, Validators.required]
+        City: [null, Validators.required],
+
       }),
 
       PriceInfo: this.fb.group({
@@ -89,7 +103,8 @@ export class AddPropertyComponent implements OnInit {
         AOP: [null],
         Gated: [null],
         MainEntrance: [null],
-        Description: [null]
+        Description: [null],
+        Photo: [null]
       })
       });
   }
@@ -216,6 +231,10 @@ export class AddPropertyComponent implements OnInit {
         return this.OtherInfo.controls.Description as FormControl;
       }
 
+
+
+
+
   //#endregion
 //#endregion
 
@@ -243,6 +262,9 @@ export class AddPropertyComponent implements OnInit {
     }
   }
 
+
+ 
+
   mapProperty(): void {
     this.property.Id = this.housingService.newPropID();
     this.property.SellRent = +this.SellRent.value;
@@ -266,6 +288,7 @@ export class AddPropertyComponent implements OnInit {
     this.property.MainEntrance = this.MainEntrance.value;
     this.property.Possession = this.PossessionOn.value;
     this.property.Description = this.Description.value;
+
     this.property.PostedOn = new Date().toString();
   }
 
