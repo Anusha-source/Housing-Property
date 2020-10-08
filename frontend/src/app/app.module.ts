@@ -33,6 +33,8 @@ import { AuthService } from './service/auth.service';
 import { PropertyDetailResolverService } from './property/property-detail/property-detail-resolver.service';
 import { FilterPipe } from './Pipes/filter.pipe';
 import { SortPipe } from './Pipes/sort.pipe';
+import { DeletePropertyComponent } from './property/delete-property/delete-property.component';
+
 
 
 
@@ -47,6 +49,7 @@ const appRoutes: Routes = [
   {path : 'user/login', component: UserLoginComponent},
   {path : 'user/register', component: UserRegisterComponent},
  {path: '**', component: PropertyListComponent},
+ {path: 'delete-property' , component: DeletePropertyComponent}
 
 
 
@@ -61,6 +64,7 @@ const appRoutes: Routes = [
       NavBarComponent,
       AddPropertyComponent,
       PropertyDetailComponent,
+      DeletePropertyComponent,
       UserLoginComponent,
       UserRegisterComponent,
       FilterPipe,
