@@ -22,7 +22,7 @@ export class AddPropertyComponent implements OnInit {
   nextClicked: boolean;
   property = new Property();
 
-  
+
 
   // Will come from masters
   propertyTypes: Array<string> = ['House', 'Apartment', 'Duplex']
@@ -40,7 +40,7 @@ export class AddPropertyComponent implements OnInit {
     BuiltArea: null,
     City: '',
     RTM: null,
-    Image: null,
+    Image: '',
   };
 
 
@@ -67,7 +67,6 @@ export class AddPropertyComponent implements OnInit {
       console.log(data);
     });
   }
-
 
 
   CreateAddPropertyForm() {
@@ -104,7 +103,7 @@ export class AddPropertyComponent implements OnInit {
         Gated: [null],
         MainEntrance: [null],
         Description: [null],
-        Photo: [null]
+        Image: [null]
       })
       });
   }
@@ -238,10 +237,12 @@ export class AddPropertyComponent implements OnInit {
   //#endregion
 //#endregion
 
+  // tslint:disable-next-line: typedef
   onBack() {
     this.router.navigate(['/']);
   }
 
+  // tslint:disable-next-line: typedef
   onSubmit() {
     this.nextClicked = true;
     if (this.allTabsValid()) {
@@ -263,7 +264,7 @@ export class AddPropertyComponent implements OnInit {
   }
 
 
- 
+
 
   mapProperty(): void {
     this.property.Id = this.housingService.newPropID();

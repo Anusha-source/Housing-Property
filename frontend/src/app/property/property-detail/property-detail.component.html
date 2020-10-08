@@ -3,13 +3,17 @@
     <div class="card">
       <div class="card-img-wrapper">
         <img *ngIf="property.Image" class="card-img-top" src="assets/imgs/{{property.Image}}.webp">
-        <img  *ngIf="!property.Image" class="card-img-top" src="assets/imgs/house1.jpg">
+        <img *ngIf="!property.Image" class="card-img-top" src="assets/imgs/house1.jpg">
+
+
       </div>
       <div class="card-body">
         <h1 class="card-title">{{property.Name}}</h1>
         <div>
             <strong>{{property.BHK}} BHK {{property.PType}} @ ${{property.Price}}</strong>
         </div>
+
+
         <div>
            <strong>in {{property.City}}</strong>
         </div> <hr>
@@ -103,6 +107,8 @@
 
         </tab>
         <tab heading="Photos">
+
+
 
           <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>
 

@@ -34,7 +34,6 @@ galleryImages: NgxGalleryImage[];
 
 
 
-
     this.galleryOptions = [
       {
         width: '100%',

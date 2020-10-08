@@ -2,7 +2,8 @@
   <div class="card-img-wrapper">
 
     <img  *ngIf="property.Image" class ='card-img-top' src="assets/imgs/{{property.Image}}.webp">
-    <img  *ngIf="!property.Image" class ='card-img-top' src="assets/imgs/{{'house1'}}.jpg">
+    <img *ngIf="!property.Image" class="card-img-top" src="assets/imgs/house7.jpg">
+
     <ul *ngIf="!hideIcons" class="list-inline text-center member-icons animate">
 
 
