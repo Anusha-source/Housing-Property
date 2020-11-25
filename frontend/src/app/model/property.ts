@@ -1,6 +1,9 @@
 import { IPropertyBase } from './ipropertybase';
 
 export class Property implements IPropertyBase {
+  findIndex(arg0: (e: any) => boolean) {
+    throw new Error('Method not implemented.');
+  }
   Id: number;
   SellRent: number;
   Name: string;

@@ -67,8 +67,11 @@ export class AddPropertyComponent implements OnInit {
       console.log(data);
     });
   }
+ // tslint:disable-next-line: member-ordering
+  // tslint:disable-next-line: typedef
 
-
+  // tslint:disable-next-line: typedef
+  
   CreateAddPropertyForm() {
     this.addPropertyForm = this.fb.group({
       BasicInfo: this.fb.group({

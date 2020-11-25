@@ -34,7 +34,7 @@ import { PropertyDetailResolverService } from './property/property-detail/proper
 import { FilterPipe } from './Pipes/filter.pipe';
 import { SortPipe } from './Pipes/sort.pipe';
 import { DeletePropertyComponent } from './property/delete-property/delete-property.component';
-
+import { FlashMessagesModule } from 'angular2-flash-messages';
 
 
 
@@ -43,14 +43,15 @@ const appRoutes: Routes = [
   {path: '', component: PropertyListComponent},
   {path: 'rent-property' , component: PropertyListComponent},
   {path: 'add-property', component: AddPropertyComponent},
+  {path: 'delete-property' , component: DeletePropertyComponent},
+
+
   {path: 'property-detail/:id',
   component: PropertyDetailComponent,
   resolve: {prp: PropertyDetailResolverService}},
   {path : 'user/login', component: UserLoginComponent},
   {path : 'user/register', component: UserRegisterComponent},
  {path: '**', component: PropertyListComponent},
- {path: 'delete-property' , component: DeletePropertyComponent}
-
 
 
 
@@ -75,7 +76,8 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
+    FlashMessagesModule.forRoot(),
+     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
     [TabsModule.forRoot()],
     [ButtonsModule.forRoot()],

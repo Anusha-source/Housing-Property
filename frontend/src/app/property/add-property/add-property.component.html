@@ -97,15 +97,20 @@
                   ngModel
                   formControlName="City"
                   [(ngModel)]="propertyView.City">
-                    <option value=''>--Select City--</option>
-                    <option *ngFor="let city of cityList" value={{city.id}}>
-                      {{city.name}}
+                  <option value=''>--Select City--</option>
+                  <option *ngFor="let city of cityList" value={{city.id}}>
+                    {{city.name}}
                     </option>
+
+<div class="error-block"
+                *ngIf="City.invalid && (nextClicked || City.touched)">
+                  Please select city
+
+
+     </div>
+
                   </select>
-                  <div class="error-block"
-                  *ngIf="City.invalid && (nextClicked || City.touched)">
-                    Please select city
-                  </div>
+
                 </div>
 
                 <div class="form-group col-12">
@@ -304,8 +309,6 @@
               <tab heading="Photos">
                 <div class="form-group col-12">
                   <div class="photo-control">
-<input type="file">
-
 
                     </div>
                   </div>

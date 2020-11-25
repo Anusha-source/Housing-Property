@@ -11,11 +11,13 @@ styleUrls: ['property-card.component.css']
 export class PropertyCardComponent {
   @Input() property: IPropertyBase;
   @Input() hideIcons: boolean;
+  @Input()  deleteProperty: any;
 
 
 
 
   }
+
 
 
 

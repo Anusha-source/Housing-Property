@@ -3,7 +3,7 @@
     <div class="card">
       <div class="card-img-wrapper">
         <img *ngIf="property.Image" class="card-img-top" src="assets/imgs/{{property.Image}}.webp">
-        <img *ngIf="!property.Image" class="card-img-top" src="assets/imgs/house1.jpg">
+        <img *ngIf="!property.Image" class="card-img-top" src="assets/imgs/house7.jpg">
 
 
       </div>
@@ -33,8 +33,10 @@
       </div>
       <div class="card-footer">
         <div class="btn-group d-flex">
-          <button class="btn btn-primary">Like</button>
-          <button class="btn btn-success">Message</button>
+          <button class="btn btn-primary" (click) = "showFlash()">Like</button><br/><flash-messages></flash-messages><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+          <button class="btn btn-danger"  (click) = "showFlash1()" >DisLike</button><br/><flash-messages></flash-messages><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
         </div>
       </div>
   </div>

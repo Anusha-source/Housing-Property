@@ -4,7 +4,10 @@ import { HousingService } from 'src/app/service/housing.service';
 import { Property } from 'src/app/model/property';
 import {NgxGalleryOptions} from '@kolkov/ngx-gallery';
 import {NgxGalleryImage} from '@kolkov/ngx-gallery';
+import { FlashMessagesService } from 'angular2-flash-messages';
 import {NgxGalleryAnimation} from '@kolkov/ngx-gallery';
+import { AlertifyService } from 'src/app/service/alertify.service';
+
 
 @Component({
   selector: 'app-property-detail',
@@ -20,8 +23,20 @@ galleryImages: NgxGalleryImage[];
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private housingService: HousingService) { }
+              private housingService: HousingService,
+              private flashMessage: FlashMessagesService,
+              private alertify: AlertifyService) { }
 
+              showFlash() {
+                // 1st parameter is a flash message text
+                // 2nd parameter is optional. You can pass object with options.
+                this.alertify.success('Liked Succesfully');
+              }
+              showFlash1() {
+                // 1st parameter is a flash message text
+                // 2nd parameter is optional. You can pass object with options.
+                this.alertify.error('Disliked Succesfully');
+              }
   // tslint:disable-next-line: typedef
   ngOnInit() {
     this.propertyId = +this.route.snapshot.params['id'];

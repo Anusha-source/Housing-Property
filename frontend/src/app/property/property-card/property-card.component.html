@@ -2,7 +2,9 @@
   <div class="card-img-wrapper">
 
     <img  *ngIf="property.Image" class ='card-img-top' src="assets/imgs/{{property.Image}}.webp">
-    <img *ngIf="!property.Image" class="card-img-top" src="assets/imgs/house7.jpg">
+
+    <img  *ngIf="!property.Image" class ='card-img-top' src="assets/imgs/house7.jpg">
+
 
     <ul *ngIf="!hideIcons" class="list-inline text-center member-icons animate">
 
@@ -11,20 +13,11 @@
         <button class="btn btn-primary" routerLink="/property-detail/{{property.Id}}"><i class="far fa-edit"></i>
 
         </button>
-      </li>
 
-      <li class="list-inline-item">
-        <button class="btn btn-primary" routerLink="/delete-property"><i class="far fa-edit"></i>
+</ul>
+</div>
+  <div class="card-body">
 
-        </button>
-      </li>
-
-
-    </ul>
-
-
-  </div>
-  <div class="card-body p-1">
     <h1 class="mb-0"> {{property.BHK}} BHK {{property.PType}} </h1>
 
     in {{property.Name}}
